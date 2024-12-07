@@ -4,9 +4,11 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRange } from 'react-date-range';
 import { useState } from "react";
 import { format } from "date-fns";
+import { useNavigate } from "react-router-dom";
 
 
 export default function Header({ type }) {
+    const [city, setCity] = useState("")
     const [openOptions, setOpenOptions] = useState(false)
 
     const [options, setOptions] = useState({
@@ -25,8 +27,21 @@ export default function Header({ type }) {
         }
     ])
 
+
+    const navigate = useNavigate()
+
     const handleOptions = (name, operation) => {
         setOptions(prev => ({ ...prev, [name]: operation === "d" ? options[name] - 1 : options[name] + 1 }))
+    }
+
+    const handleSearch = () => {
+        navigate("/hotels", {
+            state: {
+                date,
+                options,
+                city
+            }
+        })
     }
 
 
@@ -67,7 +82,7 @@ export default function Header({ type }) {
                         <div className="header-search">
                             <div className="header-search__item">
                                 <i className="fa-solid fa-bed"></i>
-                                <input type="text" placeholder="Where are you going ?" />
+                                <input type="text" placeholder="Where are you going ?" onChange={(e) => setCity(e.target.value)} />
                             </div>
                             <div className="header-search__item">
                                 <i className="fa-solid fa-calendar-days"></i>
@@ -119,7 +134,7 @@ export default function Header({ type }) {
                                     </div>
                                 }
                             </div>
-                            <button className="header-search__button">Search</button>
+                            <button onClick={handleSearch} className="header-search__button">Search</button>
                         </div>
                     </> : null
                 }
