@@ -1,0 +1,10 @@
+/* Home style start */
+.home-container {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+/* Home style end */
