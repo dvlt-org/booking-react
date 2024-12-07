@@ -224,3 +224,56 @@
 }
 
 /* PropertyList style start */
+
+/* FeaturedPrototype style start */
+.fp {
+    display: flex;
+    width: 100%;
+    max-width: 1024px;
+    gap: 1rem;
+}
+
+.fp-item {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 10px;
+}
+
+.fp-img {
+    width: 100%;
+    height: 250px;
+    cursor: pointer;
+}
+
+.fp-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.fp-city {
+    color: #333;
+    font-size: 14px;
+}
+
+.fp-rating {
+    display: flex;
+    align-items: center;
+}
+
+.fp-rating>span {
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.fp-rating button {
+    padding: 5px;
+    cursor: pointer;
+    color: white;
+    background-color: #003580;
+    border: none;
+    outline: none;
+    font-weight: bold;
+}
+/* FeaturedPrototype style end */

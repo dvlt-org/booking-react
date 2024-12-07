@@ -7,4 +7,10 @@
     align-items: center;
 }
 
+.title {
+    width: 100%;
+    max-width: 1024px;
+    font-size: 20px;
+}
+
 /* Home style end */
